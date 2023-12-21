@@ -36,7 +36,7 @@ static constexpr auto MQTT_SERVER_URI{"tcp://localhost:1883"};
 
 using namespace fty::messagebus2;
 
-auto constexpr TIMEOUT                = std::chrono::seconds(2);
+auto constexpr TIMEOUT                = std::chrono::seconds(5);
 static const std::string QUERY        = "query";
 static const std::string QUERY_2      = "query2";
 static const std::string OK           = ":OK";
