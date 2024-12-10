@@ -1,6 +1,7 @@
 name: Call Trigger Jenkins multibranch workflow
 
 on:
+    workflow_dispatch:
     push:
       branches:
         - 'release/**'
@@ -9,14 +10,13 @@ on:
       branches:
         - 'release/**'
         - 'featureimage/**'
-    workflow_dispatch:
 
 jobs:
     call-trigger-jenkins-workflow:
         permissions:
             contents: read
             pull-requests: read
-        uses: etn-electrical/bldc-ipm2-ci/.github/workflows/reusable-jenkins-trigger.yml@featureimage/ghe-polling
+        uses: 42ity/fty-ci-ghe/.github/workflows/reusable-jenkins-trigger.yml@main
         with:    
             project-name: ${{ github.event.repository.name }}
             branch-name: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
