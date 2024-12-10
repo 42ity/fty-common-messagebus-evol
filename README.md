@@ -1,5 +1,5 @@
 # fty-messagebus2
-## ADD test 1
+## ADD test 2
 ## Description
 
 This project aims to provide somme common methods to address communication over several message bus.
